@@ -1,17 +1,19 @@
 <template>
   <div>
     <h2>カードコンポーネント</h2>
-    <div v-for="todo in todos" :key="todo.id">
-      {{ todo }}
-    </div>
+    {{ todo.title }}
+    {{ todo }}
+    {{ todo.id }}
+    <button @click="removetodo">削除</button>
   </div>
 </template>
 
 <script>
 export default {
-  computed: {
-    todos() {
-      return this.$store.state.todos;
+  props: ['todo'],
+  methods: {
+    removetodo(todo) {
+      this.$emit('clicked-remove-todo', todo);
     },
   },
 };
