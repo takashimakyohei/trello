@@ -2,13 +2,13 @@
   <div id="app">
     <div class="container">
       <List />
+      <List />
     </div>
   </div>
 </template>
 
 <script>
 import List from './components/List';
-
 export default {
   data() {
     return {};
